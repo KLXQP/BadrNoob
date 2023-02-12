@@ -1,0 +1,52 @@
+*, *:before, *after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #333;
+}
+.score {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: xx-large;
+}
+.score > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 2vh;
+    margin: 1vh 0;
+}
+.score > :first-child {
+    text-align: right;
+    border-right: .5vh solid white;
+}
+.ball {
+    --x: 50;
+    --y: 50;
+    position: absolute;
+    height: 25px;
+    background-color: rgb(127, 158, 162);
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    top: calc(var(--y) * 1vh);
+    left : calc(var(--x) * 1vw)
+}
+.paddle {
+    --position: 50;
+    height: 10vh;
+    background-color: white;
+    aspect-ratio: 10/50;
+    position: absolute;
+    top: calc(var(--position) * 1vh);
+    transform: translateY(-50%);
+}
+.left {
+    left: 1vw;
+}
+.right {
+    right: 1vw;
+}
